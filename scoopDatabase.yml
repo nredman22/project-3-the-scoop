@@ -1,0 +1,108 @@
+users:
+  Nathan:
+    username: Nathan
+    articleIds:
+      - 1
+      - 2
+    commentIds:
+      - 1
+      - 2
+      - 5
+  User2:
+    username: User2
+    articleIds:
+      - 3
+    commentIds:
+      - 3
+      - 4
+  user2:
+    username: user2
+    articleIds: []
+    commentIds: []
+articles:
+  '1':
+    id: 1
+    title: New Article
+    url: www.news.com
+    username: Nathan
+    commentIds:
+      - 1
+      - 2
+      - 3
+    upvotedBy:
+      - Nathan
+      - User2
+    downvotedBy: []
+    comments:
+      - &ref_0
+        id: 1
+        body: First Comment
+        username: Nathan
+        articleId: 1
+        commentIds: []
+        upvotedBy: []
+        downvotedBy: []
+      - &ref_1
+        id: 2
+        body: Second Comment
+        username: Nathan
+        articleId: 1
+        commentIds: []
+        upvotedBy: []
+        downvotedBy: []
+      - &ref_2
+        id: 3
+        body: User 2's comment
+        username: User2
+        articleId: 1
+        commentIds: []
+        upvotedBy: []
+        downvotedBy: []
+  '2':
+    id: 2
+    title: 2nd Article
+    url: www.news.com
+    username: Nathan
+    commentIds: []
+    upvotedBy: []
+    downvotedBy:
+      - Nathan
+      - User2
+    comments: []
+  '3':
+    id: 3
+    title: 3rd Article
+    url: www.news.com
+    username: User2
+    commentIds:
+      - 4
+      - 5
+    upvotedBy:
+      - Nathan
+    downvotedBy:
+      - User2
+    comments:
+      - &ref_3
+        id: 4
+        body: first Comment
+        username: User2
+        articleId: 3
+        commentIds: []
+        upvotedBy: []
+        downvotedBy:
+          - Nathan
+comments:
+  '1': *ref_0
+  '2': *ref_1
+  '3': *ref_2
+  '4': *ref_3
+  '5':
+    id: 5
+    body: Nathan's Comment!
+    username: Nathan
+    articleId: 3
+    commentIds: []
+    upvotedBy: []
+    downvotedBy: []
+nextArticleId: 4
+nextCommentId: 6
